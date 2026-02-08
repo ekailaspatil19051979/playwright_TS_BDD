@@ -1,0 +1,47 @@
+{
+  "name": "playwright-bdd-automation",
+  "version": "1.0.0",
+  "description": "Enterprise Automation Framework using Playwright, TypeScript, and Cucumber BDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:ui": "cucumber-js --tags '@ui'",
+    "test:api": "cucumber-js --tags '@api'",
+    "test:e2e": "cucumber-js --tags '@e2e'",
+    "playwright:test": "playwright test",
+    "playwright:ui": "playwright test --project=chromium --headed",
+    "lint": "eslint . --ext .ts",
+    "allure:generate": "allure generate reports/allure-results -o reports/allure-report --clean",
+    "allure:open": "allure open reports/allure-report"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "cucumber",
+    "bdd",
+    "automation",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@cucumber/cucumber": "^10.0.0",
+    "@faker-js/faker": "^9.9.0",
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
+    "allure-commandline": "^2.25.0",
+    "allure-playwright": "^2.9.0",
+    "playwright": "^1.40.0",
+    "playwright-lighthouse": "^4.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2",
+    "winston": "^3.19.0"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.3",
+    "dotenv": "^16.3.1",
+    "log4js": "^6.9.1",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "default": {
+        "paths": [
+            "feature/**/*.feature"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "require": [
+            "steps/**/*.ts",
+            "fixtures/**/*.ts"
+        ],
+        "format": [
+            "progress-bar",
+            "html:reports/cucumber-report.html",
+            "json:reports/cucumber-report.json"
+        ],
+        "parallel": 1,
+        "retry": 1
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ES2019",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "strict": true,
+        "noImplicitAny": false,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./*"
+            ]
+        }
+    },
+    "include": [
+        "tests/**/*.ts",
+        "steps/**/*.ts",
+        "pages/**/*.ts",
+        "services/**/*.ts",
+        "utils/**/*.ts",
+        "fixtures/**/*.ts",
+        "playwright.config.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
