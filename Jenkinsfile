@@ -7,6 +7,7 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -15,14 +16,14 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
-                sh 'npx playwright install --with-deps'
+                bat 'npm install'
+                bat 'npx playwright install --with-deps'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npx playwright test'
+                bat 'npx playwright test'
             }
         }
 
@@ -30,6 +31,15 @@ pipeline {
             steps {
                 allure includeProperties: false, jdk: '', results: [[path: 'reports/allure-results']]
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution completed'
+        }
+        failure {
+            echo 'Tests failed – check Allure report'
         }
     }
 }
